@@ -10,7 +10,7 @@
 {% block content %}
 
 {% if form is not null %}
-<div class="d-flex justify-content-center">
+<div style="height: 100vh" class="d-flex align-items-center justify-content-center">
     <form method="post" class="d-flex flex-column gap-4">
         {% csrf_token %}
         <h1 class="text-center">Message Me</h1>
