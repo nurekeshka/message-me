@@ -1,0 +1,4 @@
+.venv
+settings.ini
+**/__pycache__
+db.sqlite3

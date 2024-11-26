@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Message Me{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block content %}
+
+{% if form is not null %}
+<div class="d-flex justify-content-center">
+    <form method="post" class="d-flex flex-column gap-4">
+        {% csrf_token %}
+        <h1 class="text-center">Message Me</h1>
+
+        {% for field in form %}
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">{{field.label}}</span>
+            {{field}}
+        </div>
+
+        {% endfor %}
+
+        <div class="d-flex justify-content-center">
+            <input type="submit" title="Send" class="btn btn-success">
+        </div>
+    </form>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
