@@ -25,7 +25,7 @@ class MessageView(View):
             return HttpResponse('You have to fill all inputs.')
 
         bot.send_message(self.recipient, '\n'.join([
-            f'Message from {request.POST.get('name')}',
+            f'Message from {request.POST.get("name")}',
             'Body:',
             str(request.POST.get('message'))
         ]))
