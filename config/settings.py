@@ -17,8 +17,7 @@ ALLOWED_HOSTS = settings.get('DJANGO', 'ALLOWED_HOSTS').split(',')
 CORS_ORIGIN_ALLOW_ALL = settings.getboolean('DJANGO', 'CORS_ORIGIN_ALLOW_ALL')
 
 # Application definition
-
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -27,8 +26,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRD_PARTY_APPS = [
+    'corsheaders'
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
