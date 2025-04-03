@@ -6,6 +6,7 @@ from apps.common import response
 from apps.messenger.forms import MessageForm
 
 import telebot
+import json
 
 bot = telebot.TeleBot(token=settings.TELEGRAM_BOT_TOKEN)
 
@@ -30,4 +31,4 @@ class MessageView(View):
             str(request.POST.get('message'))
         ]))
 
-        return HttpResponse(content='Sent!')
+        return HttpResponse(json.dumps({'message': 'Done!'}))
