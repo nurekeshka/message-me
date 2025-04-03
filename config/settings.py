@@ -13,14 +13,21 @@ SECRET_KEY = settings.get('DJANGO', 'SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = settings.getboolean('DJANGO', 'DEBUG')
 
-ALLOWED_HOSTS = settings.get('DJANGO', 'ALLOWED_HOSTS').split(',')
-CORS_ORIGIN_ALLOW_ALL = settings.getboolean('DJANGO', 'CORS_ORIGIN_ALLOW_ALL')
-CORS_ALLOW_CREDENTIALS = settings.getboolean(
-    'DJANGO', 'CORS_ALLOW_CREDENTIALS')
-CORS_ALLOWED_ORIGINS = settings.get(
-    'DJANGO', 'CORS_ALLOWED_ORIGINS').split(',')
-CSRF_TRUSTED_ORIGINS = settings.get(
-    'DJANGO', 'CORS_ALLOWED_ORIGINS').split(',')
+ALLOWED_HOSTS = ['*']
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+    "https://elmira-bilokon.vercel.app"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:4200",
+    "https://elmira-bilokon.vercel.app"
+]
 
 # Application definition
 DJANGO_APPS = [
