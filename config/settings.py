@@ -15,6 +15,10 @@ DEBUG = settings.getboolean('DJANGO', 'DEBUG')
 
 ALLOWED_HOSTS = settings.get('DJANGO', 'ALLOWED_HOSTS').split(',')
 CORS_ORIGIN_ALLOW_ALL = settings.getboolean('DJANGO', 'CORS_ORIGIN_ALLOW_ALL')
+CORS_ALLOW_CREDENTIALS = settings.getboolean(
+    'DJANGO', 'CORS_ALLOW_CREDENTIALS')
+CORS_ALLOWED_ORIGINS = settings.get(
+    'DJANGO', 'CORS_ALLOWED_ORIGINS').split(',')
 
 # Application definition
 DJANGO_APPS = [
