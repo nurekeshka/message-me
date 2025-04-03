@@ -14,6 +14,7 @@ SECRET_KEY = settings.get('DJANGO', 'SECRET_KEY')
 DEBUG = settings.getboolean('DJANGO', 'DEBUG')
 
 ALLOWED_HOSTS = settings.get('DJANGO', 'ALLOWED_HOSTS').split(',')
+CORS_ORIGIN_ALLOW_ALL = settings.getboolean('DJANGO', 'CORS_ORIGIN_ALLOW_ALL')
 
 # Application definition
 
