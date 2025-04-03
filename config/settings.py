@@ -19,6 +19,8 @@ CORS_ALLOW_CREDENTIALS = settings.getboolean(
     'DJANGO', 'CORS_ALLOW_CREDENTIALS')
 CORS_ALLOWED_ORIGINS = settings.get(
     'DJANGO', 'CORS_ALLOWED_ORIGINS').split(',')
+CSRF_TRUSTED_ORIGINS = settings.get(
+    'DJANGO', 'CORS_ALLOWED_ORIGINS').split(',')
 
 # Application definition
 DJANGO_APPS = [
